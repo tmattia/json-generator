@@ -1,3 +1,5 @@
+require "json/generator/version"
+
 require "json/generator/basic_attribute"
 require "json/generator/empty_attribute"
 require "json/generator/string_attribute"
