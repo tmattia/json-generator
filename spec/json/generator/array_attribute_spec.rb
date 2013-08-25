@@ -9,7 +9,7 @@ module JSON
 
       describe '#generate' do
         context 'with minItems' do
-          it 'should generate an array with two objects of the expected type' do
+          it 'should generate an array with the minimum number of items of the expected type' do
             stubbed_item = stub('item', :generate => 'foo')
             AttributeFactory.should_receive(:create).twice.
               with('type' => 'dummy_type').

@@ -9,7 +9,7 @@ module JSON
 
       describe '#generate' do
         context 'without a default value' do
-          it 'should return the default value' do
+          it 'should return 0' do
             described_class.new({'type' => 'integer'}).generate.should == 0
           end
         end

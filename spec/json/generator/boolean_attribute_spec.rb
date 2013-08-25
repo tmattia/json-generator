@@ -9,7 +9,7 @@ module JSON
 
       describe '#generate' do
         context 'without a default value' do
-          it 'should return the default value' do
+          it 'should return false' do
             described_class.new({'type' => 'boolean'}).generate.should == false
           end
         end

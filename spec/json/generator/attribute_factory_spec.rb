@@ -6,7 +6,7 @@ module JSON
       describe '.create' do
         let(:attribute) { stub('attribute') }
 
-        context 'when type is a string' do
+        context 'when type is string' do
           let(:properties) { {'type' => 'string'} }
 
           it 'should create a StringAttribute' do
@@ -15,7 +15,7 @@ module JSON
           end
         end
 
-        context 'when type is an object' do
+        context 'when type is object' do
           let(:properties) { {'type' => 'object'} }
 
           it 'should create an ObjectAttribute' do
@@ -24,7 +24,7 @@ module JSON
           end
         end
 
-        context 'when type is an array' do
+        context 'when type is array' do
           let(:properties) { {'type' => 'array'} }
 
           it 'should create an ArrayAttribute' do
@@ -33,7 +33,7 @@ module JSON
           end
         end
 
-        context 'when type is an integer' do
+        context 'when type is integer' do
           let(:properties) { {'type' => 'integer'} }
 
           it 'should create an IntegerAttribute' do
@@ -42,7 +42,7 @@ module JSON
           end
         end
 
-        context 'when type is a boolean' do
+        context 'when type is boolean' do
           let(:properties) { {'type' => 'boolean'} }
 
           it 'should create a BooleanAttribute' do
@@ -51,7 +51,7 @@ module JSON
           end
         end
 
-        context 'when type is a number' do
+        context 'when type is number' do
           let(:properties) { {'type' => 'number'} }
 
           it 'should create a NumberAttribute' do
@@ -78,10 +78,10 @@ module JSON
           end
         end
 
-        context 'when we have an array of types' do
+        context 'when there is more than one type' do
           let(:properties) { {'type' => ['string', 'boolean']} }
 
-          it 'should create a the default attribute for the first type' do
+          it 'should create an attribute for the first type' do
             StringAttribute.should_receive(:new).with(properties).and_return(attribute)
             described_class.create(properties).should == attribute
           end
