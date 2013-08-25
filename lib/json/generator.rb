@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require "json/generator/version"
 
 require "json/generator/basic_attribute"

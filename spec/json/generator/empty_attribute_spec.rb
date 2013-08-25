@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 module JSON
   module Generator
     describe EmptyAttribute do

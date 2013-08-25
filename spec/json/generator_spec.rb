@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 module JSON
   describe Generator do
     describe '.generate' do
