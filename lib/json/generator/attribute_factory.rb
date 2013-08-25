@@ -7,6 +7,7 @@ module JSON
         'integer' => IntegerAttribute,
         'array' => ArrayAttribute,
         'boolean' => BooleanAttribute,
+        'number' => NumberAttribute,
         nil => EmptyAttribute
       }
 

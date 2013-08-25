@@ -49,6 +49,15 @@ module JSON
           end
         end
 
+        context 'when type is a number' do
+          let(:properties) { {'type' => 'number'} }
+
+          it 'should create a NumberAttribute' do
+            NumberAttribute.should_receive(:new).with(properties).and_return(attribute)
+            described_class.create(properties).should == attribute
+          end
+        end
+
         context 'when we have an array of types' do
           let(:properties) { {'type' => ['string', 'boolean']} }
 
