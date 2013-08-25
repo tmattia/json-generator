@@ -10,8 +10,8 @@ module JSON
         'array' => ArrayAttribute,
         'boolean' => BooleanAttribute,
         'number' => NumberAttribute,
-        nil => EmptyAttribute
       }
+      CLASSES.default = EmptyAttribute
 
       def self.create(properties)
         CLASSES[Array(properties['type']).first].new(properties)

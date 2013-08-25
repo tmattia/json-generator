@@ -60,6 +60,24 @@ module JSON
           end
         end
 
+        context 'when type is null' do
+          let(:properties) { {'type' => 'null'} }
+
+          it 'should create an EmptyAttribute' do
+            EmptyAttribute.should_receive(:new).with(properties).and_return(attribute)
+            described_class.create(properties).should == attribute
+          end
+        end
+
+        context 'when type is any' do
+          let(:properties) { {'type' => 'any'} }
+
+          it 'should create an EmptyAttribute' do
+            EmptyAttribute.should_receive(:new).with(properties).and_return(attribute)
+            described_class.create(properties).should == attribute
+          end
+        end
+
         context 'when we have an array of types' do
           let(:properties) { {'type' => ['string', 'boolean']} }
 
