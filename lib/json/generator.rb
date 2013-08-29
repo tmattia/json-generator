@@ -12,12 +12,14 @@ require "json/generator/boolean_attribute"
 require "json/generator/number_attribute"
 require "json/generator/attribute_factory"
 require "json/generator/dereferencer"
+require "hash_deep_merge"
 
 module JSON
   module Generator
-    def self.generate(schema)
+    def self.generate(schema, merge_hash = {})
       dereferenced_schema = Dereferencer.dereference(schema)
-      AttributeFactory.create(dereferenced_schema).generate
+      result = AttributeFactory.create(dereferenced_schema).generate
+      result.deep_merge(merge_hash)
     end
   end
 end
