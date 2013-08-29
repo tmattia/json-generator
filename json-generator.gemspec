@@ -2,7 +2,7 @@
 
 $LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
 
-require 'json-generator'
+require 'json/generator/version'
 
 Gem::Specification.new do |gem|
   gem.name = 'json-generator'
@@ -21,6 +21,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
 
   gem.add_dependency 'json-schema'
+  gem.add_dependency "hash-deep-merge"
 
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'bundler'
